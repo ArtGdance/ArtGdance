@@ -52,7 +52,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ArtArchitect: Adaptive Depth Correction and Outpainting for Realistic World Generation</h1>
+          <h1 class="title is-1 publication-title">ArtGDance: Music-Driven 3D Group Dance Generation Framework</h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
@@ -71,9 +71,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="tree" src="static/images/ArtArchitect1.jpg" alt="ArtArchitect Image" height="100%">
+      <img id="tree" src="static/images/teaser_gd.png" alt="ArtGDance Image" height="100%">
       <h2 class="subtitle has-text-centered">
-        The ability of ArtArchitect to create expansive, coherent 3D scenes from a single input image and estimated depth, featuring panoramic reconstructions and seamless high-fidelity extensions.
+        Music-to-dance generation maps a music sequence to synchronized dance motions aligned with its rhythm and emotion.
       </h2>
     </div>
   </div>
@@ -90,8 +90,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-           We address the challenge of creating seamless, visually coherent 3D scenes from text descriptions and images, a task that is frequently hindered by sudden transitions, boundary artifacts, and inconsistent depth representations in current techniques. These issues not only disrupt the realism but also worsen as the scene scales up, resulting in poor quality for large-scale scene generation. To overcome these challenges, we present ArtArchitect, an innovative framework that introduces two main advancements. First, an enhanced Outpaint Modulator utilizes channel-aware noise thresholding to ensure smooth transitions, reduce boundary artifacts, and maintain fine details. Second, an Adaptive Depth Modulator combines adaptive window-based depth filling with edge-preserving smoothing to generate consistent depth maps and preserve geometric stability across different views. Our method effectively addresses common artifacts, enabling the creation of high-quality, large-scale 3D environments with strong spatial and visual continuity. Both qualitative and quantitative evaluations show that ArtArchitect significantly outperforms existing methods, setting a new benchmark for stable, immersive, and visually impressive 3D scene generation. 
-           Index Terms—3D Scene Generation, Emerging Advances in Technologies
+            Group dance, as a complex and collaborative art form, requires performers to execute synchronized movements while maintaining dynamic spatial formations. Central to this art form is its inseparable connection with music, where rhythm, tempo, and emotional content guide bodily motion, creating a harmonious interplay between auditory and visual modalities. In this work, we address the challenges of music-driven group dance generation, a task that synthesizes natural, coherent, and synchronized group dance movements from music. To tackle these challenges, we propose the \textbf{ArtGDance framework}, which integrates a Music Encoder, a Dance Decoder, and a Dance Discriminator. These components are enhanced by Generative Adversarial Training (GAT) and a Kinetic Loss to significantly improve the naturalness, synchronization, and diversity of generated dance sequences. Additionally, we introduce a Retrieval model, composed of a Music Encoder, Dance Encoder, and training by contrastive learning. Based on this, we construct an evaluation framework to comprehensively assess the quality of the generated dances. Extensive experiments conducted on the AIOZ-GDANCE dataset demonstrate that ArtGDance achieves state-of-the-art performance, while advancing AI for Art.
           </p>
         </div>
       </div>
@@ -105,12 +104,12 @@
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
       <h1 class="title is-3">Framework</h1>
-      <img id="tree" src="static/images/ArtArchitect2.jpg" alt="ArtArchitect Image" height="100%">
+      <img id="tree" src="static/images/overview_gd.png" alt="ArtGDance Image" height="100%">
       <h2 class="subtitle has-text-centered">
         <div class="content has-text-justified">
           <p>
-            Fig. 1. Illustration of the ArtArchitect Pipeline. The framework constructs expansive, seamless 3D scenes through a three-step iterative process: (1) PointCloud Lifting, which initiates the next partial scene; (2) Outpainting the Next Keyframe, utilizing the Outpaint Modulator for smooth scene extensions; and (3) Depth Consistency Check, applying the Adaptive Depth Modulator to ensure geometric stability. This process repeats iteratively to generate cohesive, high-quality 3D environments.
-            
+            Fig. 1. Overview of the proposed framework for the Group Music-to-Dance task. The framework includes a Music Encoder for temporal feature extraction, a Dance Decoder for generating group dance sequences with temporal and spatial modeling, and a Dance Discriminator for evaluating and improving dance quality.
+      
           </p>
         </div>
       </h2>
@@ -126,518 +125,20 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
+      <h1 class="title is-3">ArtGdanceDemo</h1>
       <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/02_alice_disney.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/02_alice_disney.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
+        <div class="columns is-centered">
+          <!-- Video -->
+          <div class="column">
+            <figure class="image">
+              <video controls class="video" style="width: 100%;">
+                <source src="static/videos/ArtGdanceDemo.mp4" type="video/mp4">
+              </video>
+              <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
+            </figure>
           </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
         </div>
 
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/desert.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/desert.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/forbidden.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/forbidden.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/pirate_2.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/pirate_2.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/ink_lake.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/ink_lake.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/ink_mountain.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/ink_mountain.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/poem_chuzhouxijian.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/poem_chuzhouxijian.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/poem_snowy_evening.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/poem_snowy_evening.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_campus_1.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_campus_1.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_campus_5.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_campus_5.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_lake.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_lake.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_lake_2.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_lake_2.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_mountain_2.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_mountain_2.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_mountain_3.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_mountain_3.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_westlake_1.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_westlake_1.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/real_westlake_3.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/real_westlake_3.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-
-<!-- Teaser video -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-3">Animated Scene</h1>
-      <div class="columns is-multiline is-centered">
-        <!-- Group 1: First Image and Second Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- First Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/story_walden.jpg" alt="Alice Scene">
-              </figure>
-            </div>
-            <!-- Second Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/story_walden.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- First Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
-
-        <!-- Group 2: Third Image and Fourth Video -->
-        <div class="column is-half">
-          <div class="columns is-centered">
-            <!-- Third Image -->
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/ukiyo-e_1.jpg" alt="Desert Scene">
-              </figure>
-            </div>
-            <!-- Fourth Video -->
-            <div class="column is-half">
-              <figure class="image">
-                <video controls class="video">
-                  <source src="static/videos/ukiyo-e_1.mp4" type="video/mp4">
-                </video>
-                <p class="video-time">00:00 / 00:00</p> <!-- 播放时间显示 -->
-              </figure>
-            </div>
-          </div>
-          <!-- Second Text -->
-          <p>An animated scene generated with text prompt guidance.</p>
-        </div>
       </div>
     </div>
   </div>
